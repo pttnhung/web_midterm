@@ -72,11 +72,11 @@ nav a:hover {
 .search-box {
     display: flex;
     align-items: center;
-    width: 230px;
+    width: 500px;
     gap: 7px;
     padding: 0 12px;
     border: 1px solid rgba(255, 255, 255, .2);
-    border-radius: 999px;
+    border-radius: 10px;
     background: rgba(255, 255, 255, .11);
     color: #f6f5fb;
     transition: background-color .2s ease, border-color .2s ease;

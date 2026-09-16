@@ -4,6 +4,7 @@ const movieForm = document.getElementById("movieForm");
 const movieList = document.getElementById("movieList");
 const formMessage = document.getElementById("formMessage");
 const saveBtn = document.getElementById("saveBtn");
+const searchInput = document.getElementById("search");
 let danhSachPhim = [];
 
 function getTenPhim(phim) {
@@ -19,7 +20,9 @@ function taoPhim(phim) {
 }
 
 function showPhim(phim) {
-    movieList.innerHTML = phim.map(taoPhim).map(movie => movie.hienThiPhim()).join("");
+    movieList.innerHTML = phim.length
+        ? phim.map(taoPhim).map(movie => movie.hienThiPhim()).join("")
+        : '<p class="list-message">Không tìm thấy phim phù hợp.</p>';
 }
 
 function hienThiThongBao(message, isError = false) {
@@ -61,6 +64,15 @@ function dienForm(phim) {
 document.getElementById("resetFormBtn").addEventListener("click", () => {
     xoaTrangThaiForm();
     hienThiThongBao("");
+});
+
+searchInput.addEventListener("input", event => {
+    const tuKhoa = event.target.value.trim().toLowerCase();
+    const phimDaLoc = danhSachPhim.filter(phim => {
+        const noiDungTimKiem = `${getTenPhim(phim)} ${phim.moTa ?? ""}`.toLowerCase();
+        return noiDungTimKiem.includes(tuKhoa);
+    });
+    showPhim(phimDaLoc);
 });
 
 movieForm.addEventListener("submit", async event => {
