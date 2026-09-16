@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phim hay</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <a class="logo" href="#" aria-label="Xem phim cùng Nhunh Thị">
+            <span class="logo-mark" aria-hidden="true">▶</span>
+            <span>Xem phim <strong>hay</strong></span>
+        </a>
+
+        <nav>
+            <a href="#">Trang chủ</a>
+            <a href="#">Thể loại</a>
+            <a href="#">Phim mới</a>
+            <a href="#">Phim hot</a>
+        </nav>
+
+        <label class="search-box" for="search">
+            <span aria-hidden="true">⌕</span>
+            <input type="search" id="search" placeholder="Tìm tên phim...">
+        </label>
+    </header>
+
+    <main>
+        <section class="movie-form-section" aria-labelledby="movieFormTitle">
+            <div class="form-heading">
+                <div>
+                    <h1 id="movieFormTitle">Quản lý phim</h1>
+                </div>
+                <button type="button" id="resetFormBtn" class="secondary-btn">Thêm phim mới</button>
+            </div>
+            <form id="movieForm">
+                <input type="hidden" id="movieId">
+                <label>Tên phim<input type="text" id="tenPhim" required></label>
+                <label>Thời lượng (phút)<input type="number" id="thoiLuong" min="1" required></label>
+                <label>Năm phát hành<input type="number" id="namPhatHanh" min="1888" max="2100" required></label>
+                <label>Giá phim<input type="number" id="giaPhim" min="0" step="0.01" required></label>
+                <label class="form-wide">Ảnh phim (URL)<input type="url" id="anhPhim" placeholder="https://..." required></label>
+                <label class="form-wide">Mô tả<textarea id="moTa" rows="3" required></textarea></label>
+                <div class="form-actions form-wide">
+                    <button type="submit" class="submit-btn" id="saveBtn">Thêm phim</button>
+                    <span id="formMessage" role="status" aria-live="polite"></span>
+                </div>
+            </form>
+        </section>
+        <div class="movie-list" id="movieList"></div>
+    </main>
+
+    <script src="js/Phim.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
