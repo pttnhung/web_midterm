@@ -44,7 +44,6 @@ header {
     background: linear-gradient(135deg, #fbbf24, #f97316);
     color: #312e81;
     font-size: 14px;
-    box-shadow: 0 4px 12px rgba(251, 191, 36, .35);
 }
 
 nav {
@@ -58,7 +57,7 @@ nav a {
     position: relative;
     padding: 10px 13px;
     border-radius: 8px;
-    color: #ddd6fe;
+    color: #eeebfb;
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
@@ -79,7 +78,7 @@ nav a:hover {
     border: 1px solid rgba(255, 255, 255, .2);
     border-radius: 999px;
     background: rgba(255, 255, 255, .11);
-    color: #ddd6fe;
+    color: #f6f5fb;
     transition: background-color .2s ease, border-color .2s ease;
 }
 
@@ -98,7 +97,7 @@ header input {
 }
 
 header input::placeholder {
-    color: #c4b5fd;
+    color: #f4f2fc;
 }
 
 .movie-form-section { width: 94%; max-width: 1040px; margin: 20px auto 0; padding: 14px 16px; background: white; border: 1px solid #ddd; border-radius: 8px; }
